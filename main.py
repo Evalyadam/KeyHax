@@ -23,7 +23,9 @@ while running:
     print("1. repeat key clicks for N times (Key clicks begin after 3 seconds)")
     print("2. write a macro")
     print("3. run a macro (Key clicks begin after 3 seconds)")
-    print("4. exit")
+    print("4. view macros")
+    print("5. Autoclick")
+    print("6. exit")
     choice = input(">>> ")
     if choice == "1":
         print("Enter key to repeat:")
@@ -55,6 +57,13 @@ while running:
         except FileNotFoundError:
             print("Macro file not found")
     elif choice == "4":
+        print("Current macros available:")
+        for file in os.listdir('macros'):
+            if file.endswith(".txt"):
+                print(file)
+    elif choice == "5":
+        print("Not available yet!")
+    elif choice == "6":
         running = False
     else:
         print("Invalid choice, please select 1-4.")
